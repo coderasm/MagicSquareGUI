@@ -1,4 +1,4 @@
-﻿namespace MagicSquare
+﻿namespace MagicSquareGUI
 {
   partial class magicSquares
   {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSquare", "MagicSquare\MagicSquare.csproj", "{2C4A4602-A3DC-48F9-A136-18FD8AA8E90C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSquareGUI", "MagicSquareGUI\MagicSquareGUI.csproj", "{2C4A4602-A3DC-48F9-A136-18FD8AA8E90C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

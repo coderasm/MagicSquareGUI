@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2C4A4602-A3DC-48F9-A136-18FD8AA8E90C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MagicSquare</RootNamespace>
-    <AssemblyName>MagicSquare</AssemblyName>
+    <RootNamespace>MagicSquareGUI</RootNamespace>
+    <AssemblyName>MagicSquareGUI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

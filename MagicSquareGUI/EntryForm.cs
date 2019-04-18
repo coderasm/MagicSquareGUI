@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MagicSquare
+namespace MagicSquareGUI
 {
   public partial class EntryForm : Form
   {

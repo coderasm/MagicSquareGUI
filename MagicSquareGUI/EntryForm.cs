@@ -15,14 +15,14 @@ namespace MagicSquareGUI
     {
       var nSquares = 1;
       var isInt = int.TryParse(textBox1.Text, out nSquares);
-      if (isInt)
+      if (isInt && nSquares % 2 != 0)
       {
         this.nSquares = nSquares;
         DialogResult = DialogResult.OK;
         Close();
       }
       else
-        errorLabel.Visible = !isInt;
+        errorLabel.Visible = true;
     }
 
     private void onCancel(object sender, EventArgs e)

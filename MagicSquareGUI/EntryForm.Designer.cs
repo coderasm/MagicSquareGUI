@@ -55,21 +55,21 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(1, 5);
+      this.label1.Location = new System.Drawing.Point(18, 5);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(115, 13);
+      this.label1.Size = new System.Drawing.Size(79, 13);
       this.label1.TabIndex = 2;
-      this.label1.Text = "Enter odd # of squares";
+      this.label1.Text = "Enter an odd N";
       // 
       // errorLabel
       // 
       this.errorLabel.AutoSize = true;
       this.errorLabel.ForeColor = System.Drawing.Color.Red;
-      this.errorLabel.Location = new System.Drawing.Point(6, 47);
+      this.errorLabel.Location = new System.Drawing.Point(20, 47);
       this.errorLabel.Name = "errorLabel";
-      this.errorLabel.Size = new System.Drawing.Size(103, 13);
+      this.errorLabel.Size = new System.Drawing.Size(79, 13);
       this.errorLabel.TabIndex = 3;
-      this.errorLabel.Text = "Enter an odd integer";
+      this.errorLabel.Text = "Enter an odd N";
       this.errorLabel.Visible = false;
       // 
       // button2

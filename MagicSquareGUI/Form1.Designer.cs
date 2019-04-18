@@ -55,7 +55,7 @@
       // setNewNToolStripMenuItem
       // 
       this.setNewNToolStripMenuItem.Name = "setNewNToolStripMenuItem";
-      this.setNewNToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.setNewNToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
       this.setNewNToolStripMenuItem.Text = "Set New N";
       this.setNewNToolStripMenuItem.Click += new System.EventHandler(this.prompForNewN);
       // 
@@ -67,7 +67,10 @@
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "magicSquares";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Magic Squares";
+      this.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaint);
+      this.Resize += new System.EventHandler(this.onResize);
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.ResumeLayout(false);

@@ -1,10 +1,12 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace MagicSquare
 {
   public partial class magicSquares : Form
   {
     private int nSquares = 1;
+    int[,] grid;
     public magicSquares()
     {
       InitializeComponent();
@@ -27,13 +29,15 @@ namespace MagicSquare
 
     private void generateGrid()
     {
-      int[,] grid = new int[nSquares, nSquares];
-      if (nSquares % 4 == 0)
-        populateWithDoublyEvenMethod(grid);
-      else if (nSquares % 2 == 0)
-        populateWithSinglyEvenMethod(grid);
-      else
+      grid = new int[nSquares, nSquares];
+      //if (nSquares % 4 == 0)
+      //  populateWithDoublyEvenMethod(grid);
+      //else if (nSquares % 2 == 0)
+      //  populateWithSinglyEvenMethod(grid);
+      //else
+      if (nSquares % 2 != 0)
         populateWithOddMethod(grid);
+      printGrid();
     }
 
     private void populateWithOddMethod(int[,] grid)
@@ -45,8 +49,41 @@ namespace MagicSquare
       var iterations = nSquares * nSquares - 1;
       for (int i = 0; i < iterations; i++)
       {
-        //check up and right
-
+        var newRow = currentRow - 1;
+        var newColumn = currentColumn + 1;
+        //outside upper right corner of square
+        if (newRow < 0 && newColumn > nSquares - 1)
+        {
+          grid[++currentRow, currentColumn] = i + 2;
+        }
+        //outside above square
+        else if (newRow < 0 && newColumn <= nSquares - 1)
+        {
+          grid[nSquares - 1, newColumn] = i + 2;
+          currentRow = nSquares - 1;
+          currentColumn = newColumn;
+        }
+        //outside to the right of square
+        else if (newRow <= nSquares - 1 && newColumn > nSquares - 1)
+        {
+          grid[newRow, 0] = i + 2;
+          currentRow = newRow;
+          currentColumn = 0;
+        }
+        else
+        {
+          //check if already occupied
+          if (grid[newRow, newColumn] > 0)
+          {
+            grid[++currentRow, currentColumn] = i + 2;
+          }
+          else
+          {
+            grid[newRow, newColumn] = i + 2;
+            currentRow = newRow;
+            currentColumn = newColumn;
+          }
+        }
       }
     }
 
@@ -65,9 +102,17 @@ namespace MagicSquare
 
     }
 
-    private void toolStripLabel1_Click(object sender, System.EventArgs e)
+    private void printGrid()
     {
-
+      for (int i = 0; i < grid.GetLength(0); i++)
+      {
+        var row = "";
+        for (int p = 0; p < grid.GetLength(1); p++)
+        {
+          row += $" {grid[i, p]}";
+        }
+        Console.WriteLine(row);
+      }
     }
 
     private void prompForNewN(object sender, System.EventArgs e)

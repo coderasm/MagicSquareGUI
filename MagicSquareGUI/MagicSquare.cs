@@ -77,14 +77,34 @@ namespace MagicSquareGUI
       }
     }
 
-    private void printSquare()
+    public void print()
     {
+      int[] columnWidths = new int[nSquares];
+      //find column widths
+      for (int i = 0; i < grid.GetLength(0); i++)
+      {
+        for (int p = 0; p < grid.GetLength(1); p++)
+        {
+          var length = grid[i, p].ToString().Length;
+          if (length > columnWidths[p])
+            columnWidths[p] = length;
+        }
+      }
+      //print square
       for (int i = 0; i < grid.GetLength(0); i++)
       {
         var row = "";
         for (int p = 0; p < grid.GetLength(1); p++)
         {
-          row += $" {grid[i, p]}";
+          //get item width
+          var itemWidth = grid[i, p].ToString().Length;
+          var spacesNeeded = 1 + columnWidths[p] - itemWidth;
+          //concat needed spaces
+          for (int t = 0; t < spacesNeeded; t++)
+          {
+            row += " ";
+          }
+          row += $"{grid[i, p]}";
         }
         Console.WriteLine(row);
       }

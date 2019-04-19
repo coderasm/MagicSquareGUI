@@ -26,11 +26,6 @@ namespace MagicSquareGUI
     private void generateGrid()
     {
       grid = new int[nSquares, nSquares];
-      //if (nSquares % 4 == 0)
-      //  populateWithDoublyEvenMethod(grid);
-      //else if (nSquares % 2 == 0)
-      //  populateWithSinglyEvenMethod(grid);
-      //else
       if (nSquares % 2 != 0)
         populateWithOddMethod();
     }
@@ -80,16 +75,6 @@ namespace MagicSquareGUI
           }
         }
       }
-    }
-
-    private void populateWithDoublyEvenMethod()
-    {
-
-    }
-
-    private void populateWithSinglyEvenMethod()
-    {
-
     }
 
     private void printSquare()

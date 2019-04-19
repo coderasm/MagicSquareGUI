@@ -46,6 +46,7 @@ namespace MagicSquareGUI
     {
       var x = 0;
       var y = menuStrip1.Height;
+      //size all elements
       var spacingPercentage = .20;
       var spacingFix = nSquares > 3 ? 1 : 5;
       var smallSquarePercentage = 1 - spacingPercentage;
@@ -66,6 +67,7 @@ namespace MagicSquareGUI
 
       pen.Color = Color.LimeGreen;
       brush.Color = Color.LimeGreen;
+      //move to first square/cell
       x = spacingRight;
       y += spacingBottom;
       for (int i = 0; i < grid.GetLength(0); i++)
@@ -76,6 +78,7 @@ namespace MagicSquareGUI
           var smallRect = new Rectangle(x, y, smallSquareWidth, smallSquareHeight);
           e.Graphics.DrawRectangle(pen, smallRect);
           e.Graphics.FillRectangle(brush, smallRect);
+          //draw number
           brush.Color = Color.Black;
           var font = new Font("Arial", smallSquareHeight * .50F);
           var textX = x + smallSquareWidth / (grid[i, p] > 9 ? 10 : 4);
@@ -83,8 +86,10 @@ namespace MagicSquareGUI
           var format = new StringFormat();
           e.Graphics.DrawString(grid[i, p].ToString(), font, brush, textX, textY, format);
           brush.Color = Color.LimeGreen;
+          //move to next cell
           x = x + smallSquareWidth + spacingRight;
         }
+        //move to next row
         x = spacingRight;
         y = y + smallSquareHeight + spacingBottom;
       }
@@ -92,7 +97,7 @@ namespace MagicSquareGUI
 
     private void onResize(object sender, System.EventArgs e)
     {
-      //Resize drawing to new window size
+      //Resize window to square of largest dimension
       clientDimension = ClientSize.Height > ClientSize.Width ? ClientSize.Height : ClientSize.Width;
       ClientSize = new Size(clientDimension, clientDimension);
       Invalidate();
